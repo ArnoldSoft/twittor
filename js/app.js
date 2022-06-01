@@ -1,6 +1,12 @@
+var url        = window.location.href;
+var swLocation = '/twittor' 
+
+
 if( navigator.serviceWorker ){
-    console.log("entra")
-    navigator.serviceWorker.register('/sw.js')
+    if( url.includes('localhost')  ) {
+        swLocation = '/sw.js'
+    }
+    navigator.serviceWorker.register(swLocation)
 }
 
 
